@@ -10,7 +10,7 @@ Private backup of my Obsidian vault (plain Markdown notes — open the folder in
 - **Templates/** — Bug and Decision note templates.
 
 ## How backup works
-This folder is a Git repository linked to `github.com/TheAnakin01/obsidian-notes` (private).
+This folder is a Git repository linked to `github.com/TheAnakin01/Obsidian-Notes` (private).
 Changes are uploaded with commit + push (or automatically with the Obsidian Git plugin).
 
 > Never put passwords or API keys in these notes.
