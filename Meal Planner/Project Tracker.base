@@ -1,0 +1,62 @@
+filters:
+  and:
+    - file.inFolder("Meal Planner")
+views:
+  - type: table
+    name: Bugs
+    filters:
+      and:
+        - type == "bug"
+    order:
+      - file.name
+      - severity
+      - area
+      - status
+      - step
+      - found_by
+    sort:
+      - property: step
+        direction: ASC
+  - type: table
+    name: Open bugs
+    filters:
+      and:
+        - type == "bug"
+        - status != "fixed"
+    order:
+      - file.name
+      - severity
+      - area
+      - status
+  - type: table
+    name: Critical & high bugs
+    filters:
+      and:
+        - type == "bug"
+        - or:
+            - severity == "critical"
+            - severity == "high"
+    order:
+      - file.name
+      - severity
+      - area
+      - step
+  - type: table
+    name: Decisions
+    filters:
+      and:
+        - type == "decision"
+    order:
+      - file.name
+      - area
+      - step
+      - status
+    sort:
+      - property: step
+        direction: ASC
+  - type: table
+    name: All notes
+    order:
+      - file.name
+      - type
+      - tags

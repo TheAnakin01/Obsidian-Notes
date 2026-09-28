@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {"id":"title","type":"text","text":"# 🥗 Meal Planner — how it fits together\nFree plans only · see [[Architecture]]","x":-420,"y":-520,"width":520,"height":110,"color":"4"},
+    {"id":"phone","type":"text","text":"## 📱 Phone / browser\nInstalled PWA\nTab bar: Today · Week · Shopping · Diary · More\n[[Design System]]","x":-760,"y":-300,"width":300,"height":170,"color":"5"},
+    {"id":"sw","type":"text","text":"## Service worker\n`public/sw.js`\nOffline copies, offline ticks outbox, notifications\n[[Offline & PWA]]","x":-760,"y":-40,"width":300,"height":170,"color":"5"},
+    {"id":"vercel","type":"text","text":"## ▲ Vercel (Hobby)\nNext.js 16 app\nPages · server actions · API routes\nPlanner · shopping · allergen engine","x":-300,"y":-300,"width":320,"height":190,"color":"6"},
+    {"id":"supabase","type":"text","text":"## 🗄️ Supabase (Free)\nPostgres + Auth\nRow Level Security on every table\nRealtime (household list)\npg_cron (reminders)\n[[Database]]","x":180,"y":-340,"width":320,"height":230,"color":"4"},
+    {"id":"github","type":"text","text":"## GitHub\n`TheAnakin01/meal-planner`\npush = deploy + migrations","x":-300,"y":-620,"width":320,"height":120,"color":"3"},
+    {"id":"usda","type":"text","text":"**USDA FoodData Central**\nIngredient nutrition (stored once)","x":-460,"y":60,"width":250,"height":100},
+    {"id":"off","type":"text","text":"**Open Food Facts**\nBarcode scans in the diary","x":-180,"y":60,"width":250,"height":100},
+    {"id":"gemini","type":"text","text":"**Google Gemini (free)**\nAI coach + recipe drafts\n[[AI Coach]]","x":100,"y":60,"width":250,"height":110,"color":"2"},
+    {"id":"spoon","type":"text","text":"**Spoonacular (free)**\nDiscover page only","x":380,"y":60,"width":250,"height":100},
+    {"id":"cron","type":"text","text":"**pg_cron timer**\nevery 15 min → /api/cron/reminders","x":560,"y":-300,"width":260,"height":110},
+    {"id":"safety","type":"text","text":"## 🛡️ Allergy safety\nTags + word check, both must pass\nUsed by planner, swaps, barcodes, AI replies\n[[Allergen Safety]]","x":-300,"y":260,"width":400,"height":160,"color":"1"},
+    {"id":"bugs","type":"file","file":"Meal Planner/Bugs/Bugs.md","x":200,"y":260,"width":320,"height":260},
+    {"id":"decisions","type":"file","file":"Meal Planner/Decisions/Decisions.md","x":560,"y":260,"width":320,"height":260}
+  ],
+  "edges": [
+    {"id":"e1","fromNode":"phone","fromSide":"right","toNode":"vercel","toSide":"left","label":"pages & taps"},
+    {"id":"e2","fromNode":"phone","fromSide":"bottom","toNode":"sw","toSide":"top","label":"offline copies"},
+    {"id":"e3","fromNode":"vercel","fromSide":"right","toNode":"supabase","toSide":"left","label":"login + data (RLS)"},
+    {"id":"e4","fromNode":"supabase","fromSide":"top","toNode":"phone","toSide":"top","label":"live household list"},
+    {"id":"e5","fromNode":"github","fromSide":"bottom","toNode":"vercel","toSide":"top","label":"auto-deploy"},
+    {"id":"e6","fromNode":"github","fromSide":"right","toNode":"supabase","toSide":"top","label":"new migrations"},
+    {"id":"e7","fromNode":"vercel","fromSide":"bottom","toNode":"usda","toSide":"top"},
+    {"id":"e8","fromNode":"vercel","fromSide":"bottom","toNode":"off","toSide":"top"},
+    {"id":"e9","fromNode":"vercel","fromSide":"bottom","toNode":"gemini","toSide":"top"},
+    {"id":"e10","fromNode":"vercel","fromSide":"bottom","toNode":"spoon","toSide":"top"},
+    {"id":"e11","fromNode":"supabase","fromSide":"right","toNode":"cron","toSide":"left"},
+    {"id":"e12","fromNode":"cron","fromSide":"top","toNode":"phone","toSide":"top","label":"web push reminders (via Vercel)"},
+    {"id":"e13","fromNode":"vercel","fromSide":"bottom","toNode":"safety","toSide":"top","label":"every recipe"}
+  ]
+}

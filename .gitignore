@@ -1,0 +1,13 @@
+# Obsidian: per-device window layout and cache (change constantly, not worth backing up)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Old empty git experiment folder (kept on this computer, not uploaded)
+New/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
