@@ -17,6 +17,7 @@ works offline as an installed app. Built 2026-09-27 → 2026-09-28 with Claude C
 > New to Obsidian? Read [[How to use this vault]] first (2 minutes).
 
 ## 🔗 Links
+- **All my projects:** [[Projects]]
 - **Live app:** https://meal-planner-pied-beta.vercel.app
 - **Code:** https://github.com/TheAnakin01/meal-planner
 - Full technical spec lives in the repo as `CLAUDE.md`; the friendly intro is `README.md`.

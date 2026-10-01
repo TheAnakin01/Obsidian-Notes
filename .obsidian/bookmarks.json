@@ -2,6 +2,12 @@
   "items": [
     {
       "type": "file",
+      "ctime": 1790812800000,
+      "path": "Projects.md",
+      "title": "All Projects"
+    },
+    {
+      "type": "file",
       "ctime": 1790575200000,
       "path": "Meal Planner/Meal Planner Home.md",
       "title": "Meal Planner Home"
